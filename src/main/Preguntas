@@ -1,0 +1,49 @@
+responde con tus propias palabras
+¿cuantos patrones de diseño has identificado en tu proeyctp SpringBoot HASTA SU DESARROLLO Y POR QUÉ , Y CONNQEU COMPONENETES  SE RELACIONAN?
+
+Hola profesor, en mi proyecto Spring Boot he identificado y aplicado estos 4 patrones de diseño principales:
+
+1.Primeroe el  PATRÓN MVC
+Este patrón me ayuda a estructura toda mi aplicación de forma organizada:
+
+Model (Modelo):
+
+Lo implementé con la clase Combinado (mi entidad)
+Se encarga de representar la estructura de datos y la lógica de negocio
+
+Controller:
+La clase CombinadoController
+
+Maneja las peticiones HTTP y decide qué hacer con cada endpoint
+
+View (Vista):
+
+En mi API REST, las vistas son las respuestas JSON que devuelvo
+
+Aunque no hay interfaz gráfica tradicional, los JSON actúan como "vista" para el cliente
+
+2. el segundo es el  PATRÓN REPOSITORY
+Lo implementé mediante CombinadoRepository que extiende de JpaRepository
+
+Este patrón me proporciona una abstracción completa para acceder a la base de datos
+
+Spring Data JPA se encarga automáticamente de los métodos CRUD básicos
+
+3. tercero esta ek PATRÓN SERVICE
+La clase CombinadoService actúa como capa intermedia entre el controller y el repository
+
+Aquí encapsulo toda la lógica de negocio de mi aplicación
+
+Permite mantener el controller limpio y separar responsabilidades
+
+4. como cuarto esta el PATRÓN DE INYECCIÓN DE DEPENDENCIAS
+Spring Boot lo implementa automáticamente mediante:
+
+Inyección de CombinadoRepository en CombinadoService
+
+Inyección de CombinadoService en CombinadoController
+
+Lo hago a través de constructores, que es la forma más recomendada
+
+Esto hace que mi código sea testable y desacoplado
+
